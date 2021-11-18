@@ -7497,10 +7497,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: raceCarWhite
       objectReference: {fileID: 0}
-    - target: {fileID: 8449996119470504636, guid: 761a86d8e41c77348b23ca8230de4397, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: b5482655c68d95e4eb442a96c966393b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761a86d8e41c77348b23ca8230de4397, type: 3}
 --- !u!4 &494104437947134241 stripped
