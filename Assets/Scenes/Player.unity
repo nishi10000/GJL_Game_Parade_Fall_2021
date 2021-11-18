@@ -1917,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1435559199085229189, guid: ab9d28f5ce3a51942a222975b15d47fe, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1435559199085229283, guid: ab9d28f5ce3a51942a222975b15d47fe, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3247,7 +3251,7 @@ MonoBehaviour:
   Player: {fileID: 1653156148}
   AI: {fileID: 1765652152}
   cleartime: {fileID: 0}
-  LastCheckPoint: 18
+  LastCheckPoint: 
   player: {fileID: 1227063381}
   ai: {fileID: 950330905}
 --- !u!4 &832262753 stripped
@@ -7569,7 +7573,7 @@ GameObject:
   - component: {fileID: 2038262735}
   m_Layer: 0
   m_Name: ColliderBody
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
