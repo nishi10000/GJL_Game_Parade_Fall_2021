@@ -18,6 +18,9 @@ public class Timer : MonoBehaviour
 	//　カウントタイマー表示用テキスト
 	public Text CountText;
 
+	private float ClearTime;
+	//public readonly static Timer Instance = new Data();
+
 	float countdown = 4f;
 	int count;
 
@@ -27,6 +30,8 @@ public class Timer : MonoBehaviour
 		seconds = 0f;
 		oldMinority = 0f;
 		minority = 0f;
+
+
 	}
 
 	void Update()
@@ -44,7 +49,8 @@ public class Timer : MonoBehaviour
 
 		if (countdown <= 1)
 		{
-			minority += Time.deltaTime * 100;
+			float a = Time.time - 3;
+			minority += Time.deltaTime *100;
 			if (minority >= 100f)
 			{
 				CountText.text = count.ToString("");
@@ -60,9 +66,10 @@ public class Timer : MonoBehaviour
 			//　値が変わった時だけテキストUIを更新
 			if ((int)minority != (int)oldMinority)
 			{
-				timerText.text = minute.ToString("00") + ":" + seconds.ToString("00") + ":" + minority.ToString("00");
+				timerText.text = a.ToString();//minute.ToString("00") + ":" + seconds.ToString("00") + ":" + minority.ToString("00");
 			}
 			oldMinority = minority;
+			ClearTime = a;
 		}
 	}
 }
