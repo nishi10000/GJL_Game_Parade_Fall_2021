@@ -110,6 +110,9 @@ namespace naichilab
             //ランキング取得
             yield return StartCoroutine(LoadRankingBoard());
 
+
+
+
             //スコア更新している場合、ボタン有効化
             if (_ncmbRecord == null)
             {
@@ -117,6 +120,12 @@ namespace naichilab
             }
             else
             {
+                //スコア0の場合、ボダン無効化
+                if (_lastScore.Value == 0)
+                {
+                    Debug.Log("スコア0");
+                    sendScoreButton.interactable = false;
+                }
                 var highScore = _board.BuildScore(_ncmbRecord[COLUMN_SCORE].ToString());
 
                 if (_board.Order == ScoreOrder.OrderByAscending)
