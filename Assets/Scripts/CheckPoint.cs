@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class CheckPoint : MonoBehaviour
 {
     //通ったチェックポイント回数
-    private int Checkcount_player;
+    int Checkcount_player;
     private int Checkcount_ai;
     public Text cleartime;
     //通過したチェックポイントを入れる
-    public string LastCheckPoint;
+    //public string LastCheckPoint;
+    string LastCheckPoint;
     int LastCheckPointa =0;
     int LastCheckPointb =0;
 
@@ -22,6 +23,7 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("GGGGG");
         //Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Player")//チェックポイントに触れた
         {
@@ -30,8 +32,9 @@ public class CheckPoint : MonoBehaviour
             //逆走禁止設定
             if (LastCheckPoint != gameObject.name)
             {
-                Checkcount_player += 1;
-                Debug.Log("Check_p:" + Checkcount_player);
+                Checkcount_player +=1;
+                Debug.Log(gameObject.name);
+                Debug.Log("Check_pPPPPPP:" + Checkcount_player);
                 player.text = "Player:" + gameObject.name;
                 LastCheckPoint = gameObject.name;
             }
@@ -45,7 +48,7 @@ public class CheckPoint : MonoBehaviour
     }
     void Start()
     {
-        Checkcount_player = 0;
+        Checkcount_player = 7;
         Checkcount_ai = 0;
         LastCheckPointa = 0;
         LastCheckPointb = 0;
@@ -60,7 +63,7 @@ public class CheckPoint : MonoBehaviour
             {
                 //playerの勝ち
                 Debug.Log("プレイヤーの勝ち");
-                //cleartime = timerText;
+                
             }
             else if ((Checkcount_player - Checkcount_ai) <= -3)
             {

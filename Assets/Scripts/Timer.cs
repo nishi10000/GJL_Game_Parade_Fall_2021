@@ -30,8 +30,6 @@ public class Timer : MonoBehaviour
 		seconds = 0f;
 		oldMinority = 0f;
 		minority = 0f;
-
-
 	}
 
 	void Update()
