@@ -35,7 +35,7 @@ public class MeshWatpointController : MonoBehaviour
         if (Vector3.Distance(waypoints[currentWP].transform.position, EnemyObject.transform.position) < changepointDistance)
         {
             currentWP++;
-            Debug.Log(currentWP);
+            //Debug.Log(currentWP);
             if (currentWP >= waypoints.Count)
             {
                 currentWP = 0;

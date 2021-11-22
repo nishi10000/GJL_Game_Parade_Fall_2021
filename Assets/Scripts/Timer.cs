@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
@@ -18,7 +19,7 @@ public class Timer : MonoBehaviour
 	//　カウントタイマー表示用テキスト
 	public Text CountText;
 
-	private float ClearTime;
+	public static float ClearTime;
 	//public readonly static Timer Instance = new Data();
 
 	float countdown = 4f;
@@ -48,13 +49,13 @@ public class Timer : MonoBehaviour
 		if (countdown <= 1)
 		{
 			float a = Time.time - 3;
-			minority += Time.deltaTime *100;
+			minority += Time.deltaTime * 100;
 			if (minority >= 100f)
 			{
 				CountText.text = count.ToString("");
 				seconds++;
 				minority = minority - 100;
-			}		
+			}
 			if (seconds >= 60f)
 			{
 				CountText.text = count.ToString("");
@@ -67,6 +68,7 @@ public class Timer : MonoBehaviour
 				timerText.text = a.ToString();//minute.ToString("00") + ":" + seconds.ToString("00") + ":" + minority.ToString("00");
 			}
 			oldMinority = minority;
+
 			ClearTime = a;
 		}
 	}
