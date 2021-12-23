@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Recode : MonoBehaviour
 {
+    [SerializeField] Timer timer;
+    public int g = 0;
     public static float SaveTime = 0;
     // Start is called before the first frame update
     void Start()
@@ -16,9 +18,5 @@ public class Recode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CheckPoint.d == 0)
-        {
-            SaveTime = CheckPoint.Victory;
-        }
     }
 }

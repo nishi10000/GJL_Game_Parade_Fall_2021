@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9a3a8f165f98d4b8d9b90079ca203f, type: 3}
-  m_Name: Score
+  m_Script: {fileID: 11500000, guid: 307a736764ebbce44b54d72f8467b6fd, type: 3}
+  m_Name: CustomXRSystemData
   m_EditorClassIdentifier: 
-  roundScore:
-  - 0
-  totalScore: 300
+  shaders:
+    xrOcclusionMeshPS: {fileID: 0}
+    xrMirrorViewPS: {fileID: 0}

@@ -36,6 +36,6 @@ public class Score : ScriptableObject
     void Init()
     {
         RoundScore = new List<float>(roundScore);
-        TotalScore = TotalScore;//Recode.SaveTime;
+        TotalScore = TotalScore;//TotalScore;
     }
 }

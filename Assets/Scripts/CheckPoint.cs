@@ -31,6 +31,8 @@ public class CheckPoint : MonoBehaviour
     public static float Victory=0;
 
     // Start is called before the first frame update
+    [SerializeField] Event gameEnd;
+    [SerializeField] Score score;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -75,9 +77,11 @@ public class CheckPoint : MonoBehaviour
                     WinOrLossText.GetComponent<Text>().enabled = true;//•\Ž¦
                     WinOrLossText.text = ("You win.");
                     d = 1;
-                    Victory = Timer.ClearTime;
+                    //Victory = Timer.ClearTime;
                     //Debug.Log(Victory);
-                    SceneManager.LoadScene("result");
+                    score.TotalScore = TestManager.Instance.Test();
+                    //SDebug.Log(score.TotalScore);
+                    gameEnd.Raise();
                 }
                 else if (c <= -3)
                 {
@@ -86,14 +90,19 @@ public class CheckPoint : MonoBehaviour
                     WinOrLossText.GetComponent<Text>().enabled = true;//•\Ž¦
                     WinOrLossText.text = ("You lose.");
                     d = 1;
+                    score.TotalScore = 600;
                     ///Victory = 300;
-                    SceneManager.LoadScene("result");
+                    gameEnd.Raise();
                 }
             }
         }
     }
     void Start()
     {
+        a = 0;
+        b = 0;
+        y = 0;
+        d = 0;
     }
 
     // Update is called once per frame

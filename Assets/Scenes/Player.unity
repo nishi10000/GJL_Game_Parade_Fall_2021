@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1032,9 +1032,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -1256,9 +1264,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -5223,9 +5239,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -5690,9 +5714,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -7942,6 +7974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4c582b7b91c064babb34c00e1ccd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 773576661}
+  g: 0
 --- !u!1001 &647043596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9398,8 +9432,8 @@ GameObject:
   m_Component:
   - component: {fileID: 773576660}
   - component: {fileID: 773576659}
-  - component: {fileID: 773576658}
   - component: {fileID: 773576661}
+  - component: {fileID: 773576658}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -9416,16 +9450,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 773576657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &773576659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9470,8 +9512,10 @@ MonoBehaviour:
   minute: 0
   seconds: 0
   minority: 0
+  oldMinority: 0
   timerText: {fileID: 572053891}
   CountText: {fileID: 647292035}
+  recode: {fileID: 646831692}
 --- !u!4 &801617615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69297b04c7e82f5449972e41a525e2d2, type: 3}
@@ -11802,9 +11846,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -12304,9 +12356,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -13268,9 +13328,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -13361,9 +13429,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -13651,9 +13727,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -14067,9 +14151,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -15113,9 +15205,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -15206,9 +15306,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -17241,9 +17349,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -18200,6 +18316,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3454862720395923305, guid: a077cf3f401d0954c9ece4db6f51ae9a, type: 3}
   m_PrefabInstance: {fileID: 1623618307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1625841020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625841022}
+  - component: {fileID: 1625841021}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1625841021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625841020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad937cd2531ea443966dc957de783a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1625841022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625841020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 250.70181, y: -281.95737, z: 496.69092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627377145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4141033283395889558, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
@@ -18828,9 +18987,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -19116,9 +19283,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -20955,9 +21130,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 
@@ -29475,9 +29658,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950330905}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f15ad4512d51e54fb28ddf208fedee3, type: 2}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1227063381}
+    - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 2121b9e8d24bafc4e979ac626544a476, type: 2}
     - target: {fileID: 4141033283395889557, guid: d36ff8a9974f90f43aba68abe3d9f31a, type: 3}
       propertyPath: JudgeText
       value: 

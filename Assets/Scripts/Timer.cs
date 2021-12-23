@@ -7,20 +7,24 @@ public class Timer : MonoBehaviour
 {
 
 	[SerializeField]
-	private int minute;
+	public int minute = 0;
 	[SerializeField]
-	private float seconds;
+	public float seconds = 0f;
 	[SerializeField]
-	private float minority;
+	public float minority = 0f;
 	//　前のUpdateの時の秒数
-	private float oldMinority;
+	public float oldMinority = 0f;
 	//　タイマー表示用テキスト
 	public Text timerText;
 	//　カウントタイマー表示用テキスト
 	public Text CountText;
 
+	float a = 0f;
+
 	public static float ClearTime;
 	//public readonly static Timer Instance = new Data();
+
+	[SerializeField] Recode recode;
 
 	float countdown = 4f;
 	int count;
@@ -31,6 +35,9 @@ public class Timer : MonoBehaviour
 		seconds = 0f;
 		oldMinority = 0f;
 		minority = 0f;
+		a = 0f;
+		countdown = 4f;
+		Time.deltaTime;
 	}
 
 	void Update()
@@ -48,7 +55,7 @@ public class Timer : MonoBehaviour
 
 		if (countdown <= 1)
 		{
-			float a = Time.time - 3;
+			a = Time.time - 3;
 			minority += Time.deltaTime * 100;
 			if (minority >= 100f)
 			{
@@ -68,7 +75,7 @@ public class Timer : MonoBehaviour
 				timerText.text = a.ToString();//minute.ToString("00") + ":" + seconds.ToString("00") + ":" + minority.ToString("00");
 			}
 			oldMinority = minority;
-
+			
 			ClearTime = a;
 		}
 	}
