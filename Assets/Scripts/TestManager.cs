@@ -6,6 +6,8 @@ public class TestManager : SingletonMonoBehaviour<TestManager>
 {
     protected override bool dontDestroyOnLoad { get { return true; } }
 
+    //[SerializeField] Timer timer;
+
     // Start is called before the first frame update
     void Start()
     {

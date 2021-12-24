@@ -4,19 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Recode : MonoBehaviour
+public class Reload : MonoBehaviour
 {
-    [SerializeField] Timer timer;
-    public int g = 0;
-    public static float SaveTime = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        DontDestroyOnLoad(this);
-    }
-
-    // Update is called once per frame
+    [SerializeField] Event gameEnd;
     void Update()
     {
+        //‚±‚±‚©‚ç
+        if (Input.GetKey("space"))
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+           SceneManager.LoadScene("SceneManager");
+        }
+        //‚±‚±‚Ü‚Å
     }
 }

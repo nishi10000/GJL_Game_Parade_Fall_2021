@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class CheckPoint : MonoBehaviour
 {
     //通ったチェックポイント回数
-    public static int a=0;
-    public static int b=0;
+    public static int a;
+    public static int b;
     public int x;
-    public static int y = 0;
-    public static int d = 0;
+    public static int y;
+    public static int d;
     int A,B;
     //通過したチェックポイントを入れる
     //public string LastCheckPoint;

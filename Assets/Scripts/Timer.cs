@@ -7,37 +7,39 @@ public class Timer : MonoBehaviour
 {
 
 	[SerializeField]
-	public int minute = 0;
+	private int minute;
 	[SerializeField]
-	public float seconds = 0f;
+	private float seconds;
 	[SerializeField]
-	public float minority = 0f;
+	private float minority;
 	//　前のUpdateの時の秒数
-	public float oldMinority = 0f;
+	private float oldMinority;
 	//　タイマー表示用テキスト
 	public Text timerText;
 	//　カウントタイマー表示用テキスト
 	public Text CountText;
 
-	float a = 0f;
+	float a;
 
 	public static float ClearTime;
 	//public readonly static Timer Instance = new Data();
 
-	[SerializeField] Recode recode;
 
-	float countdown = 4f;
+	float countdown;
 	int count;
+	float minority_a;
+	float minority_b;
 
-	void Start()
+	public void Start()
 	{
 		minute = 0;
-		seconds = 0f;
-		oldMinority = 0f;
-		minority = 0f;
-		a = 0f;
+		seconds = 0.0f;
+		oldMinority = 0.0f;
+		minority = 0.0f;
 		countdown = 4f;
-		Time.deltaTime;
+		minority_a = 0;
+		minority_b = 0;
+		//Time.deltaTime == 0;
 	}
 
 	void Update()
@@ -55,7 +57,7 @@ public class Timer : MonoBehaviour
 
 		if (countdown <= 1)
 		{
-			a = Time.time - 3;
+			//a = Time.deltaTime - 3;
 			minority += Time.deltaTime * 100;
 			if (minority >= 100f)
 			{
@@ -72,10 +74,38 @@ public class Timer : MonoBehaviour
 			//　値が変わった時だけテキストUIを更新
 			if ((int)minority != (int)oldMinority)
 			{
-				timerText.text = a.ToString();//minute.ToString("00") + ":" + seconds.ToString("00") + ":" + minority.ToString("00");
+				if (minute < 10)
+				{
+					if (seconds < 10)
+					{
+						timerText.text = "0" + minute.ToString() + ":0" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString(); //seconds.ToString();
+						//a = timerText.text = "0" + minute.ToString() + ":0" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString();
+					}
+					else
+					{
+						timerText.text = "0" + minute.ToString() + ":" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString(); //seconds.ToString();
+						//a = timerText.text = "0" + minute.ToString() + ":" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString();
+					}
+				}
+                else
+                {
+					if (seconds < 10)
+					{
+						timerText.text = minute.ToString() + ":0" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString(); //seconds.ToString();
+						//a = timerText.text = minute.ToString() + ":0" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString(); ;
+					}
+					else
+					{
+						timerText.text = minute.ToString() + ":" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString(); //seconds.ToString();
+						//timerText.text = minute.ToString() + ":" + seconds.ToString() + ":" + Mathf.Floor(minority).ToString();
+					}
+				}
 			}
 			oldMinority = minority;
-			
+			minority_a =minority*100;
+			minority_b = Mathf.Round(minority_a) / 10000;
+			a = minute * 60 + seconds + minority_b;
+			//Debug.Log(a);
 			ClearTime = a;
 		}
 	}

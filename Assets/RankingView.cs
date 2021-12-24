@@ -19,7 +19,7 @@ public class RankingView : MonoBehaviour
 
     public void Ranking()
     {
-        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(0);
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(999999999);
         //SceneManager.LoadScene("Ranking", LoadSceneMode.Additive);
     }
 
